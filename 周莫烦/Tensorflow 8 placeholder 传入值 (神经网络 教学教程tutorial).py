@@ -1,9 +1,9 @@
 import tensorflow as tf 
 
-input1 = tf.placeholder(tf.float32)
-input2 = tf.placeholder(tf.float32)
+x = tf.placeholder(tf.float32)
+y = tf.placeholder(tf.float32)
 
-out = tf.multiply(input1,input2)
+z = tf.multiply(x,y)
 
 with tf.Session() as sess:
-    print (sess.run(out,feed_dict = {input1:[11.],input2:[22.]}))
+    print(sess.run(z,feed_dict ={x:[11.],y:[11.]}))
