@@ -1,11 +1,11 @@
 import tensorflow as tf 
 
-def add_layer(inputs,in_size,out_size,activation_function = None):
+def add_layers(inputs,in_size,out_size,activation_function = None):
     Weights = tf.Variable(tf.random_normal([in_size,out_size]))
-    biases = tf.Variable(tf.zeros([1,out_size])) + 0.1
-    Wx_plus_b = tf.matmul(inputs,Weights) + biases
+    biases = tf.zeros([1,out_size]) + 0.1
+    Wx_plus_b = tf.matmul(Weights,inputs) + biases
     if activation_function is None:
-        output = Wx_plus_b
+        outputs = Wx_plus_b
     else:
-        output = activation_function(Wx_plus_b)
-    return output
+        outputs = activation_function(outputs)
+    return outputs
