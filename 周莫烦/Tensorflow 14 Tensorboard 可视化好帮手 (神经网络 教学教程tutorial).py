@@ -54,3 +54,5 @@ for _ in range(100000):
         lines = ax.plot(x_data,prediction_value,'r-',lw=3)
         plt.pause(0.01)
 plt.pause(0)
+# 运行后，在终端输入 tensorboard -logdir=logs
+# 在浏览器中打开: localhost:6006
