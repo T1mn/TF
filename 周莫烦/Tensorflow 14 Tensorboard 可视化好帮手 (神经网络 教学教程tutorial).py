@@ -10,11 +10,12 @@ def add_layer(inputs,in_size,out_size,activation_function = None):
             biases = tf.Variable(tf.zeros([1,out_size]) + 0.1,name = 'b')
         with tf.name_scope('Wx_plus_b'):
             Wx_plus_b = tf.add(tf.matmul(inputs,Weights) , biases)
-        if activation_function is None:
-            outputs = Wx_plus_b
-        else:
-            outputs = activation_function(Wx_plus_b)
-        return outputs
+        with tf.name_scope('activation_function'):
+            if activation_function is None:
+                outputs = Wx_plus_b
+            else:
+                outputs = activation_function(Wx_plus_b)
+            return outputs
 
 x_data = np.linspace(-10,10,100)[:,np.newaxis]
 noises = np.random.normal(0,6,x_data.shape)
@@ -56,3 +57,6 @@ for _ in range(100000):
 plt.pause(0)
 # 运行后，在终端输入 tensorboard -logdir=logs
 # 在浏览器中打开: localhost:6006
+
+# 矩阵：
+# [行1,列1]*[行2,列2] = [行1,列2]
