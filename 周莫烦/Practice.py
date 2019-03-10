@@ -1,5 +1,4 @@
 import tensorflow as tf 
-<<<<<<< HEAD
 from tensorflow.examples.tutorials.mnist import input_data
 # 1~10
 mnist = input_data.read_data_sets('MNIST',one_hot=True)
@@ -40,7 +39,6 @@ for _ in range(1000):
     sess.run(train_step,feed_dict={xs:batch_x,ys:batch_y})
     if _ % 50 == 0 :
         print(compute_accuracy(mnist.test.images,mnist.test.labels))
-=======
 import numpy as np 
 import matplotlib.pyplot as plt 
 # AddLay
@@ -108,4 +106,3 @@ for _ in range (1111):
             pass
         ax.lines = ax.plot(x_data,prediction,'r-',lw =1)
         plt.pause(0.00001)
->>>>>>> e0ea73c7edfefd54edc5dfce941f91e842afba1d
