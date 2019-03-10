@@ -48,6 +48,7 @@ for _ in range(500):
         # record loss
         train_result = sess.run(
             merged, feed_dict={xs: x_train, ys: y_train, keep_prob: 1})
-        test_result = sess.run(merged, feed_dict={xs: x_train, ys: y_train, keep_prob: 1})
+        test_result = sess.run(
+            merged, feed_dict={xs: x_train, ys: y_train, keep_prob: 1})
         train_writer.add_summary(train_result, _)
         train_writer.add_summary(train_result, _)
