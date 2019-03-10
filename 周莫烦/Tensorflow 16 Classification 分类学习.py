@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import tensorflow as tf
-=======
-import tensorflow as tf 
->>>>>>> e0ea73c7edfefd54edc5dfce941f91e842afba1d
 from tensorflow.examples.tutorials.mnist import input_data
 # Number 1 to 10 data
 mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
